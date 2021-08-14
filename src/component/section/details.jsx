@@ -27,6 +27,7 @@ export class Details extends Component{
 
     render(){ 
        const {product} = this.state;
+       const {addCart} = this.context;
         return(
             <>
             {
@@ -41,7 +42,7 @@ export class Details extends Component{
                             <Colors colors={item.colors}/>
                             <p>{item.description}</p>
                             <p>{item.content}</p>
-                            <Link to="/cart" className="cart">
+                            <Link to="/cart" className="cart" onClick={() => addCart(item._id)}>
                                 Add to Cart
                             </Link>
                         </div>
